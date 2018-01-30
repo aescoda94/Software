@@ -1,13 +1,10 @@
 import requests
-#import os
+import os
 import json
 
 
-#username = os.environ.get('APIC_USERNAME', None)
-#password = os.environ.get('APIC_PASSWORD', None)
-
-username = "devnetuser"
-password = "Cisco123!"
+username = os.environ.get('APIC_USERNAME', None)
+password = os.environ.get('APIC_PASSWORD', None)
 Token = ""
 header = {"content-type": "application/json"}
 
