@@ -46,8 +46,6 @@ def message_read(req):
     # The next function is contained at the sdk file on the same path
     # as this main code.
     if bot.check(req, sbuffer,spark_header):
-        # If a command is identified, you don´t need to ask to api.ai
-## CAMBIAR POR FUNCIONES DE APIC-EM
 
         action = apiai_custom.send (ai, sbuffer, abuffer)
 
