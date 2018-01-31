@@ -15,7 +15,6 @@ def check(JSON, sbuffer,header):
     # Webhook is triggered if a message is sent to the bot. The JSON and the
     # message unciphered are then saved
     # First step is to discard bot's own messages
-    print(email)
     if JSON['data']['personEmail'] != os.environ.get('BOT_EMAIL',
                                                                 '@sparkbot.io'):
         roomId    = JSON['data']["roomId"]
