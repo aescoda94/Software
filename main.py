@@ -15,6 +15,9 @@ app = Flask(__name__)
 # Instantiation of APIai object.
 ai = apiai.ApiAI(os.environ.get('APIAI_ACCESS', None))
 
+#Sparkbot email defined as a environment variable
+bot_email = os.environ.get('BOT_EMAIL',None)
+
 # Instantiation of SPARK token
 spark_header = {
         'Authorization': 'Bearer ' + os.environ.get('SPARK_ACCESS', None),
