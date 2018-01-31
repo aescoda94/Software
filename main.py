@@ -49,13 +49,13 @@ def message_read(req):
 
         action = apiai_custom.send (ai, sbuffer, abuffer)
 
-            if action is "reach":
+            if action == "reach":
                 data = get_reachability()
                 sbuffer["message"] = data
-            else if action is "ip":
+            elif action == "ip":
                 data = get_hosts()
                 sbuffer["message"] = data
-            else if action is "devices":
+            elif action == "devices":
                 data = get_devices()
                 sbuffer["message"] = data
             else:
