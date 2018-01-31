@@ -5,7 +5,8 @@ import apiai
 import apic_EM_func
 import bot
 import apiai_custom
-import flask
+from flask import Flask
+from flask import request
 
 
 # Flask app should start in global layout
