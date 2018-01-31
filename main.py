@@ -48,8 +48,10 @@ def message_read(req):
     print("HA ENTRADO EL MENSAJE")
     if bot.check(req, sbuffer,spark_header):
         print("ha comprobado bot")
+        print(sbuffer["roomId"])
         action = apiai_custom.send (ai, sbuffer, abuffer)
         print("apiai ha respondido")
+        print(action)
         if action == 'reach':
                 data = get_reachability()
                 sbuffer["message"] = data
