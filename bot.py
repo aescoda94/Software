@@ -19,6 +19,8 @@ def check(JSON, sbuffer,header):
     # First step is to discard bot's own messages
     if JSON['data']['personEmail'] != bot_email:
         roomId    = JSON['data']["roomId"]
+        print ("Esta es el roomid")
+        print(roomId)
         messageId = JSON['data']['id']
 
         # Message is not in the webhook. GET http request to Spark to obtain it
