@@ -42,7 +42,7 @@ def check(JSON, sbuffer,header):
         # The Display Name of the person must be obtained from Spark too.
         # To get the displayName of the user, Spark only needs to know the
         # personId or the personEmail
-        displayName = get_displayName(personId)
+        displayName = get_displayName(personId,header)
         # [WARNING] UUIDV1 specifies string + time ID. Maybe there is need to use
         # roomId as identification, but not very well specified in Docs
         #sessionId = uuid.uuid1()
@@ -95,10 +95,10 @@ def answer(message, roomId):
                                          + response['errors'][0]['description'])
     return status
 
-def get_displayName (personId):
+def get_displayName (personId,header):
     # To get the displayName of the user, Spark only needs to know the personId
     # or the personEmail
     message = requests.get(url='https://api.ciscospark.com/v1/people/'+personId,
-                        headers=spark_header)
+                        headers=header)
     JSON = message.json()
     return JSON.get("displayName")
