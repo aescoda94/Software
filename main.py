@@ -52,19 +52,22 @@ def message_read(req):
         if action == 'reach':
                 data = get_reachability()
                 sbuffer["message"] = data
+                return None
         elif action == "ip":
                 data = get_hosts()
                 sbuffer["message"] = data
+                return None
         elif action == "devices":
                 data = get_devices()
                 sbuffer["message"] = data
+                return None
         else:
                 status = "apiai does not know the answer"
                 sbuffer["message"] = "Ups, apiai no ha asociado su pregunta a \
                 ninguna acción"
                 return None
         bot.answer(sbuffer["message"],sbuffer['roomId'])
-        return None
+    return None
     else:
         status = "Error buffering or message from bot"
     return None
@@ -75,3 +78,4 @@ def message_read(req):
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
     app.run(debug=True, port=port, host='0.0.0.0', threaded=True)
+        
