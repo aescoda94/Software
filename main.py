@@ -31,9 +31,6 @@ abuffer = {"sessionId":"","confident":"", "message":"","action":"",
 # Defining user's dict
 user    = {"personId":"","personEmail":"","displayName":""}
 
-#Sparkbot email defined as a environment variable
-bot_email = os.environ.get('BOT_EMAIL',None)
-
 # Message Received from Spark
 @app.route('/message', methods=['POST','GET'])
 def message():
@@ -51,7 +48,7 @@ def message_read(req):
     # as this main code.
     print("HA ENTRADO EL MENSAJE")
     print (req['data']['personEmail'])
-    if bot.check(req, sbuffer,spark_header,bot_email):
+    if bot.check(req, sbuffer,spark_header):
         print("ha comprobado bot")
         print(sbuffer["roomId"])
         print(sbuffer["message"])
