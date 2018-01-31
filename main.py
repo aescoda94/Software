@@ -66,6 +66,8 @@ def message_read(req):
                 status = "apiai does not know the answer"
                 sbuffer["message"] = "Ups, apiai no ha asociado su pregunta a \
                 ninguna acción"
+                print (sbuffer["message"])
+                print ("sbuffer")
                 return None
         bot.answer(sbuffer["message"],sbuffer['roomId'])
         return None
