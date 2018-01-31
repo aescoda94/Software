@@ -45,10 +45,11 @@ def message_read(req):
     # This time, code has been splitted in different parts for clarity
     # The next function is contained at the sdk file on the same path
     # as this main code.
+    print("HA ENTRADO EL MENSAJE")
     if bot.check(req, sbuffer,spark_header):
-
+        print("ha comprobado bot")
         action = apiai_custom.send (ai, sbuffer, abuffer)
-
+        print("apiai ha respondido")
         if action == 'reach':
                 data = get_reachability()
                 sbuffer["message"] = data
