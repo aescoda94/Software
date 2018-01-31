@@ -67,10 +67,10 @@ def message_read(req):
                 ninguna acción"
                 return None
         bot.answer(sbuffer["message"],sbuffer['roomId'])
-    return None
+        return None
     else:
         status = "Error buffering or message from bot"
-    return None
+        return None
 
 
 # App is listening to webhooks. Next line is used to executed code only if it is
