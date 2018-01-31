@@ -30,6 +30,11 @@ abuffer = {"sessionId":"","confident":"", "message":"","action":"",
 # Defining user's dict
 user    = {"personId":"","personEmail":"","displayName":""}
 
+@app.route('/',methods=['POST','GET'])
+def test:
+        return'200'
+
+
 # Message Received from Spark
 @app.route('/message', methods=['POST','GET'])
 def message():
@@ -37,7 +42,7 @@ def message():
     # api.ai response will then sent back to Spark
     req = request.get_json(silent=True, force=True)
     res = message_read(req)
-    return None
+    return '200'
 
 def message_read(req):
     # JSON is from Spark. This will contain the message, a personId, displayName,
