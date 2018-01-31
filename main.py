@@ -69,7 +69,7 @@ def message_read(req):
                 print (sbuffer["message"])
                 print ("sbuffer")
                 return None
-        bot.answer(sbuffer["message"],sbuffer['roomId'])
+        bot.answer(sbuffer["message"],sbuffer['roomId'],spark_header)
         return None
     else:
         status = "Error buffering or message from bot"
