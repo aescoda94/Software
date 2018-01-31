@@ -49,6 +49,7 @@ def message_read(req):
     if bot.check(req, sbuffer,spark_header):
         print("ha comprobado bot")
         print(sbuffer["roomId"])
+        print(sbuffer["message"])
         action = apiai_custom.send (ai, sbuffer, abuffer)
         print("apiai ha respondido")
         print(action)
@@ -66,11 +67,11 @@ def message_read(req):
                 return None
         else:
                 status = "apiai does not know the answer"
-                sbuffer["message"] = "Ups, apiai no ha asociado su pregunta a \
-                ninguna acción"
+                sbuffer["message"] = "Ups, apiai no ha asociado su pregunta a ninguna acción"
                 print (sbuffer["message"])
                 print ("sbuffer")
                 return None
+        print(sbuffer["message"])
         bot.answer(sbuffer["message"],sbuffer['roomId'],spark_header)
         return None
     else:
