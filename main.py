@@ -71,6 +71,7 @@ def message_read(req):
                 print (sbuffer["message"])
                 print ("sbuffer")
                 return None
+                return None
         print(sbuffer["message"])
         bot.answer(sbuffer["message"],sbuffer['roomId'],spark_header)
         return None
