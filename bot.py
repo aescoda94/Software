@@ -53,7 +53,6 @@ def check(JSON, sbuffer,header):
         sbuffer['message']    = messagedecrypt
         sbuffer['personId']   = personId
         sbuffer['personEmail']= personEmail
-        s
         return True
     else:
         print ("message from bot: ignoring")
