@@ -11,8 +11,7 @@ import time
 import os
 import json
 
-#Sparkbot email defined as a environment variable
-bot_email = os.environ.get('BOT_EMAIL',None)
+
 
 def check(JSON, sbuffer,header):
     # Webhook is triggered if a message is sent to the bot. The JSON and the
