@@ -11,6 +11,11 @@ from flask import request
 
 # Flask app should start in global layout
 app = Flask(__name__)
+
+
+# Instantiation of APIai object.
+ai = apiai.ApiAI(os.environ.get('APIAI_ACCESS', None))
+
 # Instantiation of SPARK token
 spark_header = {
         'Authorization': 'Bearer ' + os.environ.get('SPARK_ACCESS', None),
