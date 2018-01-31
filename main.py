@@ -49,6 +49,7 @@ def message_read(req):
     # The next function is contained at the sdk file on the same path
     # as this main code.
     print("HA ENTRADO EL MENSAJE")
+    print (req['data']['personEmail'])
     if bot.check(req, sbuffer,spark_header):
         print("ha comprobado bot")
         print(sbuffer["roomId"])
