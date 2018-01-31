@@ -25,9 +25,9 @@ def get_devices():
     resp = ''
     for host in res['response']:
         response = (host['type'],host['serialNumber'],host['macAddress'])
-        resu = resu + str(response)
-    return resu
-    return resu
+        resp = resp + str(response)
+    return resp
+    return resp
 
 def get_reachability():
     token = get_token(username,password)
@@ -36,9 +36,9 @@ def get_reachability():
     resu = ''
     for host in res['response']:
         response = (host['mgmtIp'], host['reachabilityStatus'])
-        resu = resu + str(response)
-    return resu
-    return resu
+        resp = resp + str(response)
+    return resp
+    return resp
 
 def get_hosts():
     token = get_token(username,password)
