@@ -30,11 +30,6 @@ abuffer = {"sessionId":"","confident":"", "message":"","action":"",
 # Defining user's dict
 user    = {"personId":"","personEmail":"","displayName":""}
 
-@app.route('/',methods=['POST','GET'])
-def test:
-        return'200'
-
-
 # Message Received from Spark
 @app.route('/message', methods=['POST','GET'])
 def message():
