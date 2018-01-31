@@ -56,13 +56,13 @@ def message_read(req):
         print("apiai ha respondido")
         print(action)
         if action == 'reach':
-                data = get_reachability()
+                data = apic_EM_fun.get_reachability()
                 sbuffer["message"] = data
         elif action == "ip":
-                data = get_hosts()
+                data = apic_EM_func.get_hosts()
                 sbuffer["message"] = data
         elif action == "devices":
-                data = get_devices()
+                data = apic_EM_func.get_devices()
                 sbuffer["message"] = data
         else:
                 status = "apiai does not know the answer"
