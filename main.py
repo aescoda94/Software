@@ -49,16 +49,16 @@ def message_read(req):
 
         action = apiai_custom.send (ai, sbuffer, abuffer)
 
-            if action == "reach":
+        if action == 'reach':
                 data = get_reachability()
                 sbuffer["message"] = data
-            elif action == "ip":
+        elif action == "ip":
                 data = get_hosts()
                 sbuffer["message"] = data
-            elif action == "devices":
+        elif action == "devices":
                 data = get_devices()
                 sbuffer["message"] = data
-            else:
+        else:
                 status = "apiai does not know the answer"
                 sbuffer["message"] = "Ups, apiai no ha asociado su pregunta a \
                 ninguna acción"
