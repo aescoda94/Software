@@ -56,22 +56,17 @@ def message_read(req):
         if action == 'reach':
                 data = get_reachability()
                 sbuffer["message"] = data
-                return None
         elif action == "ip":
                 data = get_hosts()
                 sbuffer["message"] = data
-                return None
         elif action == "devices":
                 data = get_devices()
                 sbuffer["message"] = data
-                return None
         else:
                 status = "apiai does not know the answer"
                 sbuffer["message"] = "Ups, apiai no ha asociado su pregunta a ninguna acción"
                 print (sbuffer["message"])
                 print ("sbuffer")
-                return None
-                return None
         print(sbuffer["message"])
         bot.answer(sbuffer["message"],sbuffer['roomId'],spark_header)
         return None
