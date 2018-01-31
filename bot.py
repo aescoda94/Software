@@ -39,14 +39,6 @@ def check(JSON, sbuffer,header):
         messagedecrypt  = JSON.get("text")
         personId        = JSON.get("personId")
         personEmail     = JSON.get("personEmail")
-        # The Display Name of the person must be obtained from Spark too.
-        # To get the displayName of the user, Spark only needs to know the
-        # personId or the personEmail
-        displayName = get_displayName(personId,header)
-        # [WARNING] UUIDV1 specifies string + time ID. Maybe there is need to use
-        # roomId as identification, but not very well specified in Docs
-        #sessionId = uuid.uuid1()
-        # Session ID is based on roomId and Heroku URL
         sessionId = uuid.uuid5(uuid.NAMESPACE_DNS, str(roomId))
         # [Debug]
         #print ("Message Decrypted: "  + messagedecrypt
@@ -61,7 +53,7 @@ def check(JSON, sbuffer,header):
         sbuffer['message']    = messagedecrypt
         sbuffer['personId']   = personId
         sbuffer['personEmail']= personEmail
-        sbuffer['displayName']= displayName
+        s
         return True
     else:
         print ("message from bot: ignoring")
@@ -74,11 +66,3 @@ def answer(message, roomId):
                                                       "markdown":message
                                                         }))
     return None
-
-def get_displayName (personId,header):
-    # To get the displayName of the user, Spark only needs to know the personId
-    # or the personEmail
-    message = requests.get(url='https://api.ciscospark.com/v1/people/'+personId,
-                        headers=header)
-    JSON = message.json()
-    return JSON.get("displayName")
