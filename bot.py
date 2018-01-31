@@ -9,6 +9,7 @@ import requests
 import uuid
 import time
 import os
+import json
 
 #Sparkbot email defined as a environment variable
 bot_email = os.environ.get('BOT_EMAIL',None)
