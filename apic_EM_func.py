@@ -47,6 +47,6 @@ def get_hosts():
     resp = ''
     for host in res['response']:
         response = (host['hostIp'],host['hostMac'])
-        resp = resp + response
+        resp = resp + str(response)
     return resp
     return resp
