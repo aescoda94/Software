@@ -13,10 +13,7 @@ from flask import request
 app = Flask(__name__)
 
 # Instantiation of APIai object.
-ai = apiai.ApiAI(os.environ.get('APIAI_ACCESS', None))
-
-#Sparkbot email defined as a environment variable
-bot_email = os.environ.get('BOT_EMAIL',None)
+ai = apiai.ApiAI(os.environ.get('APIAI_ACCESS', None)
 
 # Instantiation of SPARK token
 spark_header = {
