@@ -66,7 +66,7 @@ def message_read(req):
                 sbuffer["message"] = data
         else:
                 status = "apiai does not know the answer"
-                sbuffer["message"] = "Ups, apiai no ha asociado su pregunta a ninguna acción"
+                sbuffer["message"] = "Oops, I don't understand what are you asking me, please try again!"
                 print (sbuffer["message"])
                 print ("sbuffer")
         print(sbuffer["message"])
