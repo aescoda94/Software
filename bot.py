@@ -58,10 +58,10 @@ def check(JSON, sbuffer,header):
         print ("message from bot: ignoring")
         return False
 
-def answer(message, roomId):
+def answer(message, roomId,header):
     # This will generate a response to spark
     r = requests.post('https://api.ciscospark.com/v1/messages',
-                 headers=spark_header, data=json.dumps({"roomId":roomId,
+                 headers=header, data=json.dumps({"roomId":roomId,
                                                       "markdown":message
                                                         }))
     return None
